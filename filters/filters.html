@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="stockapp">
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="filters.js"></script>
+<meta charset="ISO-8859-1">
+<title>Angular Filters</title>
+</head>
+<body>
+	<div ng-controller="StockQuoteController as stockData">
+		<h1>Limiting the results to 2</h1>
+		<div ng-repeat="stock in stockData.stocks | limitTo:2">
+			<h3>{{stock.symbol}}</h3>
+			<p>{{stock.description}}</p>
+		</div>
+		<hr />
+		<h1>Limiting the results to 2 and sorting by symbol ascending, desc uppercase</h1>
+		<div ng-repeat="stock in stockData.stocks | limitTo:2 | orderBy:'symbol'">
+			<h3>{{stock.symbol}}</h3>
+			<p>{{stock.description | uppercase}}</p>
+		</div>
+		<hr />
+		<h1>sorting by symbol descending, desc lowercase</h1>
+		<div ng-repeat="stock in stockData.stocks | orderBy:'-symbol'">
+			<h3>{{stock.symbol}}</h3>
+			<p>{{stock.description | lowercase}}</p>
+		</div>
+		<hr />
+		<h1>Currency</h1>
+		<div ng-repeat="stock in stockData.stocks | orderBy:'-symbol'">
+			<h3>{{stock.symbol}}</h3>
+			<p>{{stock.description}}</p>
+			<p>Price = {{stock.quote | currency}}</p>
+		</div>
+	</div>
+</body>
+</html>

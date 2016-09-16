@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<meta charset="ISO-8859-1">
+<title>ng-model</title>
+</head>
+<body>
+	<div ng-init="firstname='Arun';lastname='Kumar'"></div>
+	<p>Hello {{firstname + ' ' + lastname + "!"}}</p>
+	<div ng-init="stock={symbol:'NFLX',quote:22}"></div>
+	<p>Stock Symbol = {{stock.symbol}}, Quote = {{stock.quote | currency}}</p>
+</body>
+</html>
