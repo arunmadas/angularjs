@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div ng-init="firstname='Arun';lastname='Kumar'"></div>
-	<p>Hello {{firstname + ' ' + lastname + "!"}}</p>
+	<p>Hello <div ng-bind="firstname + ' ' + lastname"></div></p>
 	<div ng-init="stock={symbol:'NFLX',quote:22}"></div>
 	<p>Stock Symbol = {{stock.symbol}}, Quote = {{stock.quote | currency}}</p>
 </body>
