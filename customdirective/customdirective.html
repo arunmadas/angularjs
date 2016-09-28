@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="stockapp">
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="app.js"></script>
+<meta charset="ISO-8859-1">
+<title>custom directive</title>
+</head>
+<body>
+	You can invoke a directive by using:
+	<ul>
+		<li>Element name</li>
+		<li>Attribute</li>
+		<li>Class</li>
+		<li>Comment</li>
+	</ul>
+	<div>Element = <stock-value></stock-value></div>
+	Attribute = <div stock-value-as-html-attribute></div>
+	Class = <div class="stock-value-as-css-class"></div>
+	Comment = <!--  directive: stock-value-as-comment -->
+	
+	The legal restrict values are:
+	<ul>
+	<li>E for Element name</li>
+	<li>A for Attribute</li>
+	<li>C for Class</li>
+	<li>M for Comment</li>
+	</ul>
+By default the value is EA, meaning that both Element names and attribute names can invoke the directive.
+</body>
+</html>
